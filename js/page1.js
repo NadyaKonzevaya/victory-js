@@ -5,11 +5,8 @@
 //то показать через alert: "Верно!"
 //в противном случае отобразить:"Не знаете? ECMAScript!"
 
-
 // const userInput = prompt("Какое официальное название JavaScript?")
 // let message = "Не знаете? ECMAScript!";
-
-
 
 // if(userInput === "ECMAScript") {
 //     message = "Верно!";
@@ -30,7 +27,6 @@
 // const modifyHours = String(hours).padStart(2, "0");
 // const modifyMinutes = String(minutes).padStart(2, "0");
 
-
 // // console.log(hours);
 // // console.log(Number.parseInt(hours));
 // // console.log(modifyHours);
@@ -40,14 +36,70 @@
 //3. Напишите цикл, который выводит в консоль
 //числа от max до min по убыванию
 // Додайте все четные числа от min до max
-const max = 50;
-const min = 23;
-let total = 0;
+// const max = 50;
+// const min = 23;
+// let total = 0;
 
-for (let i = max; i >= min; i -= 1) {
-    if (i % 2 !== 0) {
-        continue;
+// for (let i = max; i >= min; i -= 1) {
+//     if (i % 2 !== 0) {
+//         continue;
+//     }
+//     total += i;
+// }
+//          console.log(total);
+
+//4. Напишите код, который будет спрашивать
+//логин с помощью prompt и логировать результат
+//в консоль браузера
+
+//Если посетитель вводит "Админ",
+//то prompt запрашивает пароль.
+//Если ничего не ввели или нажата клавиша Esc
+//вывести стороку "Отменено"
+//В противном случае вывксти строку "Я вас не знаю"
+
+//Пароль проверять так:
+//Если введён пароль "Я главный",
+//то вывести строку "Здравствуйте!"
+//иначе выводить строку "Неверный пароль!"
+
+const userLogin = prompt('Просимо вас ввести логін!');
+// if (userLogin === 'Admin') {
+//   const userPassword = prompt(
+//     `Дорогий ${userLogin} просемо вас нарешті ввести пароль!!!`
+//   );
+//   if (userPassword === 'Я головний!') {
+//     console.log('Здрастє, вітаємо вас у нас');
+//   } else if (userPassword === null) {
+//     console.log('Отменено');
+//   } else {
+//     console.log('НЕ вірний пароль');
+//   }
+// } else if (userLogin === null) {
+//   console.log('Отменено');
+// } else {
+//   console.log('{Хто ти? Я тебе не знаю');
+// }
+// console.log(userLogin);
+switch (userLogin) {
+  case 'Admin':
+    const userPassword = prompt(
+      `Дорогий ${userLogin} просемо вас нарешті ввести пароль!!!`
+    );
+    switch (userPassword) {
+      case 'Я головний!':
+        console.log('Здрастє, вітаємо вас у нас');
+        break;
+      case null:
+        console.log('Отменено');
+        break;
+      default:
+        console.log('НЕ вірний пароль');
     }
-    total += i;
+    break;
+  case null:
+    console.log('Отменено');
+    break;
+  default:
+    console.log('{Хто ти? Я тебе не знаю');
 }
-         console.log(total);
