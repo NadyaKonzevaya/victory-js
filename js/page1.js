@@ -146,18 +146,44 @@
 //введёт число больше 100, либо не нажмет кнопку
 //Отмена в prompt
 
-let userInput = prompt("Ввести число больше 100")
-// while (userInput <= 100) {
-//   userInput = prompt("Ввести число больше 100")
-// }
-let check = false
-do {
-  if (userInput <= 100) {
-    check = true
-    userInput = prompt("Ввести число больше 100")
-  } else {
-    check = false
-  }
+// let userInput = prompt("Ввести число больше 100")
+// // while (userInput <= 100) {
+// //   userInput = prompt("Ввести число больше 100")
+// // }
+// let check = false
+// do {
+//   if (userInput <= 100) {
+//     check = true
+//     userInput = prompt("Ввести число больше 100")
+//   } else {
+//     check = false
+//   }
     
-} while(check)
-console.log(`Вы ввели ${userInput}`)
+// } while(check)
+// console.log(`Вы ввели ${userInput}`)
+
+
+
+//8. Елси число делиться на 3 возвращать
+//fizz если делиться на 5 возвращать buzz
+//елси делиться на 3 и на 5 возвращить fizzbuzz
+
+function fizzBuzz (number){
+  // 
+  for ( let i=1; i<=number; i+=1){
+    if (i % 3 === 0 && i % 5 === 0){
+      console.log("fizzbuzz")
+    }
+    else if (i % 3 === 0){
+      console.log("fizz")
+    }
+    else if (i % 5 === 0){
+      console.log("buzz")
+
+    }
+    else {
+    console.log(i)
+    }
+  }
+}
+fizzBuzz(30)
