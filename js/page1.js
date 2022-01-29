@@ -114,16 +114,50 @@
 //Делать проверку,что пользователь ввел именно число,
 //а не произвольный набор символов, не нужно.
 
-let userInput = prompt("Ввести число");
-let total = 0;
+// let userInput = prompt("Ввести число");
+// let total = 0;
+// let check = false;
+// while (userInput) {
+//   const userInputToNumber = Number(userInput);
+//   if (Number.isNaN(userInputToNumber)) {
+//     userInput = prompt("Ввести число");
+//   } else {
+//     total += Number(userInput);
+//     userInput = prompt("Ввести число");
+//   }
+// }
+// console.log (5555)
+// do {
+//   if (userInput) {
+//     check = true
+//     total += Number(userInput)
+//     userInput = prompt("Ввести число")
+//   } else {
+//     check = false
+//   }
+// } while(check)
+// console.log(`Общая сумма введенных чисел равна ${total}`);
 
-while (userInput) {
-  const userInputToNumber = Number(userInput);
-  if (Number.isNaN(userInputToNumber)) {
-    userInput = prompt("Ввести число");
+//7. Напишите цикл, который предлагает ввести
+//число больше 100 через prompt.
+//Если если посетитель ввёл другое число - попросить
+//ввести ещё раз и так далее.
+//Цикл должет спрашивать число, пока посетитель не
+//введёт число больше 100, либо не нажмет кнопку
+//Отмена в prompt
+
+let userInput = prompt("Ввести число больше 100")
+// while (userInput <= 100) {
+//   userInput = prompt("Ввести число больше 100")
+// }
+let check = false
+do {
+  if (userInput <= 100) {
+    check = true
+    userInput = prompt("Ввести число больше 100")
   } else {
-    total += Number(userInput);
-    userInput = prompt("Ввести число");
+    check = false
   }
-}
-console.log(`Общая сумма введенных чисел равна ${total}`);
+    
+} while(check)
+console.log(`Вы ввели ${userInput}`)
