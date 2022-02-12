@@ -404,13 +404,24 @@
 //Проверка на палиндром
 //Лёша на полке клопа нашёл
 //А роза упала на лапу Азора
-function isPalindrom(string) {
-  let stringLowerCase = string.toLowerCase().replaceAll(' ', '');
-  // console.log(stringLowerCase);
-  const array = stringLowerCase.split('').reverse();
-  // console.log(array);
-  const stringReverse = array.join('');
-  console.log(stringReverse === stringLowerCase);
-}
-isPalindrom('А роза упала на лапу Азора');
+// function isPalindrom(string) {
+//   let stringLowerCase = string.toLowerCase().replaceAll(' ', '');
+//   // console.log(stringLowerCase);
+//   const array = stringLowerCase.split('').reverse();
+//   // console.log(array);
+//   const stringReverse = array.join('');
+//   console.log(stringReverse === stringLowerCase);
+// }
+// isPalindrom('А роза упала на лапу Азора');
 
+// [5,5,5,7,7,7]
+
+function backTobegin(array) {
+ for (let i = 0; i < array.length/2; i +=1){
+ let temp = array[i];
+ array[i] = array[array.length - 1 - i];
+ array[array.length - 1 - i] = temp;
+ }
+ console.log(array);
+}
+backTobegin([5,5,5,8,7,7,7])
