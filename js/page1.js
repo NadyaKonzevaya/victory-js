@@ -416,12 +416,31 @@
 
 // [5,5,5,7,7,7]
 
-function backTobegin(array) {
- for (let i = 0; i < array.length/2; i +=1){
- let temp = array[i];
- array[i] = array[array.length - 1 - i];
- array[array.length - 1 - i] = temp;
- }
- console.log(array);
+// function backTobegin(array) {
+//  for (let i = 0; i < array.length/2; i +=1){
+//  let temp = array[i];
+//  array[i] = array[array.length - 1 - i];
+//  array[array.length - 1 - i] = temp;
+//  }
+//  console.log(array);
+// }
+// backTobegin([5,5,5,8,7,7,7])
+
+
+
+// Пользователь вводит многозначное число через promt.
+//  Напишите функцию colonOdd(num), которая принимает число num в качестве аргумента
+//   и вставляет двоеточие (:) между двумя нечетными числами. Например, если вводится
+//   число 55639217, то на выход должно быть 5:563:921:7.
+
+function colonOdd(num) {
+
 }
-backTobegin([5,5,5,8,7,7,7])
+// Нужно созадать путой масив
+// в новый массив присвоить первый элемент строки  
+// тогда перебераем строку и проверить элементы на четность 
+// если четное добавляем двоеточие , если нет то не добавляем
+
+
+
+// return Новый массив.join
