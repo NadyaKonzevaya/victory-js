@@ -287,117 +287,130 @@
 // });
 
 
-const people = [
-  {
-    name: 'Alex',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Jhon',
-    know: [],
-  },
-  {
-    name: 'Eva',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Ivan',
-    know: ['Jhon', 'Eva'],
-  },
-];
-//нарцис  'Jhon'
+// const people = [
+//   {
+//     name: 'Alex',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Jhon',
+//     know: [],
+//   },
+//   {
+//     name: 'Eva',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Ivan',
+//     know: ['Jhon', 'Eva'],
+//   },
+// ];
+// //нарцис  'Jhon'
 
-function findNarsic(people) {
-    for (const friend of people) {
-        if(friend.know.length === 0) {
-            return findFriends(friend.name, people);
-        };
-    }
-    console.log("Нарцисс не найден");
+// function findNarsic(people) {
+//     for (const friend of people) {
+//         if(friend.know.length === 0) {
+//             return findFriends(friend.name, people);
+//         };
+//     }
+//     console.log("Нарцисс не найден");
 
+// }
+
+// function findFriends(narsicName, people) {
+//     for (const friend of people) {
+//         if (friend.name === narsicName) {
+//             continue;
+//         }
+//         if(!friend.know.includes(narsicName)) {
+//            return console.log("Нарцисс не найден");
+//         //    return;
+//         };
+//     }
+
+//     console.log("нарцисс", narsicName);
+// }
+
+
+
+
+
+// const people1 = [
+//   {
+//     name: 'Alex',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Jhon',
+//     know: [],
+//   },
+//   {
+//     name: 'Eva',
+//     know: [],
+//   },
+//   {
+//     name: 'Ivan',
+//     know: ['Jhon', 'Eva'],
+//   },
+// ];
+// //немає нарциса'
+
+
+
+// const people3 = [
+//   {
+//     name: 'Alex',
+//     know: ['Alex', 'Eva'],
+//   },
+//   {
+//     name: 'Jhon',
+//     know: [],
+//   },
+//   {
+//     name: 'Eva',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Ivan',
+//     know: ['Jhon', 'Eva'],
+//   },
+// ];
+// //немає нарциса
+
+
+
+// const people4 = [
+//   {
+//     name: 'Alex',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Jhon',
+//     know: ['Eva'],
+//   },
+//   {
+//     name: 'Eva',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Ivan',
+//     know: ['Jhon', 'Eva'],
+//   },
+// ];
+// //немає нарциса'
+
+// findNarsic(people4);
+
+//Проверка на палиндром
+//Лёша на полке клопа нашёл
+//А роза упала на лапу Азора
+function isPalindrom(string) {
+  let stringLowerCase = string.toLowerCase().replaceAll(' ', '');
+  // console.log(stringLowerCase);
+  const array = stringLowerCase.split('').reverse();
+  // console.log(array);
+  const stringReverse = array.join('');
+  console.log(stringReverse === stringLowerCase);
 }
-
-function findFriends(narsicName, people) {
-    for (const friend of people) {
-        if (friend.name === narsicName) {
-            continue;
-        }
-        if(!friend.know.includes(narsicName)) {
-           return console.log("Нарцисс не найден"); 
-        //    return;
-        };
-    }
-
-    console.log("нарцисс", narsicName);
-}
-
-
-
-
-
-const people1 = [
-  {
-    name: 'Alex',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Jhon',
-    know: [],
-  },
-  {
-    name: 'Eva',
-    know: [],
-  },
-  {
-    name: 'Ivan',
-    know: ['Jhon', 'Eva'],
-  },
-];
-//немає нарциса'
-
-
-
-const people3 = [
-  {
-    name: 'Alex',
-    know: ['Alex', 'Eva'],
-  },
-  {
-    name: 'Jhon',
-    know: [],
-  },
-  {
-    name: 'Eva',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Ivan',
-    know: ['Jhon', 'Eva'],
-  },
-];
-//немає нарциса
-
-
-
-const people4 = [
-  {
-    name: 'Alex',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Jhon',
-    know: ['Eva'],
-  },
-  {
-    name: 'Eva',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Ivan',
-    know: ['Jhon', 'Eva'],
-  },
-];
-//немає нарциса'
-
-findNarsic(people4);
+isPalindrom('А роза упала на лапу Азора');
 
