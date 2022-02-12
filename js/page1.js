@@ -158,11 +158,9 @@
 //   } else {
 //     check = false
 //   }
-    
+
 // } while(check)
 // console.log(`Вы ввели ${userInput}`)
-
-
 
 //8. Елси число делиться на 3 возвращать
 //fizz если делиться на 5 возвращать buzz
@@ -188,7 +186,6 @@
 // }
 // fizzBuzz(30)
 
-
 //Напишите функцию min(a, b), которая возвращает
 //меньшее из чисел a, b
 //нужно добавить проверку, что функция получает числа
@@ -205,27 +202,86 @@
 // }
 // console.log(min(2, "heelo"));
 
-
 //Напиши функцию findSmallerNumber(numbers)
 //которая ищет самое маленькое число в массиве
 //Добавь проверку что функция получает массив
-const numbers = [22, 5, 35, 56, 12, 24, 7, 80, 2];
+// const numbers = [22, 5, 35, 56, 12, 24, 7, 80, 2];
 
-function findSmallerNumber(numbers) {
-  if (!Array.isArray(numbers)) { 
-    console.log('не масив');
-    return 
-  };
-  let minNum1 = numbers[0];
-  let minNum2 = numbers[0];
-  for (const num of numbers) { 
-    if (num < minNum1) {
-      console.log( `minNum1: ${minNum1}, minNum2: ${minNum2}`);
-      minNum2 = minNum1;
-      minNum1 = num;
-     };
-  };
-  console.log(minNum1, minNum2);
+// function findSmallerNumber(numbers) {
+//   if (!Array.isArray(numbers)) {
+//     console.log('не масив');
+//     return
+//   };
+//   let minNum1 = numbers[0];
+//   let minNum2 = numbers[0];
+//   for (const num of numbers) {
+//     if (num < minNum1) {
+//       console.log( `minNum1: ${minNum1}, minNum2: ${minNum2}`);
+//       minNum2 = minNum1;
+//       minNum1 = num;
+//      };
+//   };
+//   console.log(minNum1, minNum2);
+// }
+
+// findSmallerNumber(numbers);
+
+//Напишите функцию caculculateAverage()
+//которая принимает произвольное количество
+//аргументов и возвращает их среднее значение.
+//Добавить проверку, что аргументы это числа.
+
+// function caculculateAverage() {
+//   let total = 0;
+//   let count = 0;
+//   for (const arg of arguments) {
+//     if (typeof arg !== 'number') {
+//       continue;
+//     }
+//     total += arg;
+//     count += 1;
+//   }
+//   return total / count;
+// }
+
+// console.log(caculculateAverage(10, 15, 20, 'f', 'c'));
+
+//Напишите функцию findTheColor()
+//которая принимает название цвета
+//определяет его наличие в массиве
+//если цвет есть, усталавливет его как фон документа
+//если цвета нет выводит console.error('Такой цвет не найден');
+//и устанавливает цвет документа красный
+// document.body.style.background = 'red';
+
+const colors = ['blue', 'yellow', 'olive', 'fuchsia', 'lime', 'aqua', 'maroon'];
+function findTheColor(colors, name) {
+  const isInArrey = colors.includes(name);
+  document.body.style.background = isInArrey ? name : 'red';
+  if (!isInArrey) {
+    console.error('Такой цвет не найден');
+  }
+  // if (isInArrey) {
+  //   document.body.style.background = name;
+  // } else {
+  //   document.body.style.background = 'red';
+  //   console.error('Такой цвет не найден');
+  // }
 }
 
-findSmallerNumber(numbers);
+findTheColor(colors, 'fuchsia');
+
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+}
+
+// Инициализация узлов
+const changeBodyColor = document.querySelector('body');
+const btnChange = document.querySelector('.change-color');
+const outputColor = document.querySelector('.color');
+
+// Слушатель
+btnChange.addEventListener('click', () => {
+  outputColor.textContent = getRandomHexColor();
+  changeBodyColor.style.backgroundColor = outputColor.textContent;
+});
