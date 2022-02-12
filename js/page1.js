@@ -192,16 +192,40 @@
 //Напишите функцию min(a, b), которая возвращает
 //меньшее из чисел a, b
 //нужно добавить проверку, что функция получает числа
-function min(a, b) {
-  console.log(typeof a);
-  console.log(typeof b);
-  if (typeof a !== "number" || typeof b !== "number") {
-    return " Введите чмсло";
-  }
-  if (a < b) {
-    return a;
-  }
-  return b;
-}
-console.log(min(2, "heelo"));
+// function min(a, b) {
+//   console.log(typeof a);
+//   console.log(typeof b);
+//   if (typeof a !== "number" || typeof b !== "number") {
+//     return " Введите чмсло";
+//   }
+//   if (a < b) {
+//     return a;
+//   }
+//   return b;
+// }
+// console.log(min(2, "heelo"));
 
+
+//Напиши функцию findSmallerNumber(numbers)
+//которая ищет самое маленькое число в массиве
+//Добавь проверку что функция получает массив
+const numbers = [22, 5, 35, 56, 12, 24, 7, 80, 2];
+
+function findSmallerNumber(numbers) {
+  if (!Array.isArray(numbers)) { 
+    console.log('не масив');
+    return 
+  };
+  let minNum1 = numbers[0];
+  let minNum2 = numbers[0];
+  for (const num of numbers) { 
+    if (num < minNum1) {
+      console.log( `minNum1: ${minNum1}, minNum2: ${minNum2}`);
+      minNum2 = minNum1;
+      minNum1 = num;
+     };
+  };
+  console.log(minNum1, minNum2);
+}
+
+findSmallerNumber(numbers);
