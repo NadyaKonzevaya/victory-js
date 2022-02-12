@@ -254,34 +254,150 @@
 //и устанавливает цвет документа красный
 // document.body.style.background = 'red';
 
-const colors = ['blue', 'yellow', 'olive', 'fuchsia', 'lime', 'aqua', 'maroon'];
-function findTheColor(colors, name) {
-  const isInArrey = colors.includes(name);
-  document.body.style.background = isInArrey ? name : 'red';
-  if (!isInArrey) {
-    console.error('Такой цвет не найден');
-  }
-  // if (isInArrey) {
-  //   document.body.style.background = name;
-  // } else {
-  //   document.body.style.background = 'red';
-  //   console.error('Такой цвет не найден');
-  // }
+// const colors = ['blue', 'yellow', 'olive', 'fuchsia', 'lime', 'aqua', 'maroon'];
+// function findTheColor(colors, name) {
+//   const isInArrey = colors.includes(name);
+//   document.body.style.background = isInArrey ? name : 'red';
+//   if (!isInArrey) {
+//     console.error('Такой цвет не найден');
+//   }
+//   // if (isInArrey) {
+//   //   document.body.style.background = name;
+//   // } else {
+//   //   document.body.style.background = 'red';
+//   //   console.error('Такой цвет не найден');
+//   // }
+// }
+
+// findTheColor(colors, 'fuchsia');
+
+// function getRandomHexColor() {
+//   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+// }
+
+// // Инициализация узлов
+// const changeBodyColor = document.querySelector('body');
+// const btnChange = document.querySelector('.change-color');
+// const outputColor = document.querySelector('.color');
+
+// // Слушатель
+// btnChange.addEventListener('click', () => {
+//   outputColor.textContent = getRandomHexColor();
+//   changeBodyColor.style.backgroundColor = outputColor.textContent;
+// });
+
+
+const people = [
+  {
+    name: 'Alex',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Jhon',
+    know: [],
+  },
+  {
+    name: 'Eva',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Ivan',
+    know: ['Jhon', 'Eva'],
+  },
+];
+//нарцис  'Jhon'
+
+function findNarsic(people) {
+    for (const friend of people) {
+        if(friend.know.length === 0) {
+            return findFriends(friend.name, people);
+        };
+    }
+    console.log("Нарцисс не найден");
+
 }
 
-findTheColor(colors, 'fuchsia');
+function findFriends(narsicName, people) {
+    for (const friend of people) {
+        if (friend.name === narsicName) {
+            continue;
+        }
+        if(!friend.know.includes(narsicName)) {
+           return console.log("Нарцисс не найден"); 
+        //    return;
+        };
+    }
 
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+    console.log("нарцисс", narsicName);
 }
 
-// Инициализация узлов
-const changeBodyColor = document.querySelector('body');
-const btnChange = document.querySelector('.change-color');
-const outputColor = document.querySelector('.color');
 
-// Слушатель
-btnChange.addEventListener('click', () => {
-  outputColor.textContent = getRandomHexColor();
-  changeBodyColor.style.backgroundColor = outputColor.textContent;
-});
+
+
+
+const people1 = [
+  {
+    name: 'Alex',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Jhon',
+    know: [],
+  },
+  {
+    name: 'Eva',
+    know: [],
+  },
+  {
+    name: 'Ivan',
+    know: ['Jhon', 'Eva'],
+  },
+];
+//немає нарциса'
+
+
+
+const people3 = [
+  {
+    name: 'Alex',
+    know: ['Alex', 'Eva'],
+  },
+  {
+    name: 'Jhon',
+    know: [],
+  },
+  {
+    name: 'Eva',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Ivan',
+    know: ['Jhon', 'Eva'],
+  },
+];
+//немає нарциса
+
+
+
+const people4 = [
+  {
+    name: 'Alex',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Jhon',
+    know: ['Eva'],
+  },
+  {
+    name: 'Eva',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Ivan',
+    know: ['Jhon', 'Eva'],
+  },
+];
+//немає нарциса'
+
+findNarsic(people4);
+
