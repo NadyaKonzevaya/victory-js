@@ -168,22 +168,40 @@
 //fizz если делиться на 5 возвращать buzz
 //елси делиться на 3 и на 5 возвращить fizzbuzz
 
-function fizzBuzz (number){
-  // 
-  for ( let i=1; i<=number; i+=1){
-    if (i % 3 === 0 && i % 5 === 0){
-      console.log("fizzbuzz")
-    }
-    else if (i % 3 === 0){
-      console.log("fizz")
-    }
-    else if (i % 5 === 0){
-      console.log("buzz")
+// function fizzBuzz (number){
+//   //
+//   for ( let i=1; i<=number; i+=1){
+//     if (i % 3 === 0 && i % 5 === 0){
+//       console.log("fizzbuzz")
+//     }
+//     else if (i % 3 === 0){
+//       console.log("fizz")
+//     }
+//     else if (i % 5 === 0){
+//       console.log("buzz")
 
-    }
-    else {
-    console.log(i)
-    }
+//     }
+//     else {
+//     console.log(i)
+//     }
+//   }
+// }
+// fizzBuzz(30)
+
+
+//Напишите функцию min(a, b), которая возвращает
+//меньшее из чисел a, b
+//нужно добавить проверку, что функция получает числа
+function min(a, b) {
+  console.log(typeof a);
+  console.log(typeof b);
+  if (typeof a !== "number" || typeof b !== "number") {
+    return " Введите чмсло";
   }
+  if (a < b) {
+    return a;
+  }
+  return b;
 }
-fizzBuzz(30)
+console.log(min(2, "heelo"));
+
